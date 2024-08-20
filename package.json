@@ -1,8 +1,16 @@
 {
   "name": "crb-inventory-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ph-cardoso/crb-inventory-frontend"
+  },
+  "author": "Pedro Henrique Lima Cardoso",
+  "description": "CRB Inventory Frontend",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
