@@ -38,4 +38,4 @@ const UserNavbar = () => {
   );
 };
 
-export default UserNavbar;
+export { UserNavbar };

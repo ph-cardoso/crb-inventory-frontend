@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const MainNavbar = ({
   className,
+  activeMenu,
   ...props
-}: React.HTMLAttributes<HTMLElement>) => {
+}: React.HTMLAttributes<HTMLElement> & { activeMenu?: string }) => {
   return (
     <nav
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
@@ -12,18 +13,24 @@ const MainNavbar = ({
     >
       <Link
         to="/"
-        className="text-sm font-medium transition-colors hover:text-primary"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary",
+          { "text-muted-foreground": activeMenu !== "home" },
+        )}
       >
         Home
       </Link>
       <Link
-        to="/items"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        to="/new-item"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary",
+          { "text-muted-foreground": activeMenu !== "itens" },
+        )}
       >
-        Items
+        Novo Item
       </Link>
     </nav>
   );
 };
 
-export default MainNavbar;
+export { MainNavbar };
